@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<h1>
+    <img :src="imgArr[index]" alt="">
+    <button @click="img_prev" v-show="index!=0">prev</button>
+    <button @click="img_next" v-show="index<imgArr.length-1">next</button>
+</h1>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data:{
+            imgArr: [
+                "http://hbimg.b0.upaiyun.com/9f6c273f2dbaf9bcb0268ce4a66cde8c689f8ad95d7a6-gjW3jD_fw658",
+                "http://img2.imgtn.bdimg.com/it/u=3159063246,2472788040&fm=26&gp=0.jpg",
+                "http://img2.imgtn.bdimg.com/it/u=1510959256,3021975842&fm=26&gp=0.jpg"
+            ],
+            index: 0,
+        },
+        methods:{
+            img_prev: function () {
+                this.index--;
+            },
+            img_next: function () {
+                this.index++;
+            }
+        }
+    })
+</script>
+</body>
+</html>

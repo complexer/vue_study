@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <img v-bind:src="imgUrl" alt="" v-show="isShow" :class="{active:isActive}" :title="imgTitle" @click="change">
+
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            isShow: true,
+            isActive: true,
+            imgUrl: "http://img4.imgtn.bdimg.com/it/u=4186089336,515125598&fm=26&gp=0.jpg",
+            imgTitle: "test",
+        },
+        methods:{
+            change: function () {
+                this.isActive = !this.isActive;
+            }
+        }
+    })
+</script>
+</body>
+</html>

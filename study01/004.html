@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1 v-text="message"></h1>
+    <h1>{{message}} World</h1>
+    <p v-text="content"></p>
+    <p v-html="content"></p>
+    <input type="button" value="v-on" @click="doit">
+    <input type="button" value="dbclick" @dblclick="doit">
+    <h2 @click="changeFood">{{food}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            message: "Hello",
+            content: "<h1>你好世界</h1>",
+            food: "麻婆豆腐",
+        },
+        methods: {
+            doit: function () {
+                alert("wocao");
+            },
+            changeFood:function () {
+                this.food+="好吃";
+            }
+        }
+    })
+</script>
+</body>
+</html>

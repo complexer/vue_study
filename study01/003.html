@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<div id="example">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    <li v-for="n in evenNumbers">{{ n }}</li>
+</div>
+
+
+
+<script src="../js/vue.js"></script>
+
+<script>
+    var vm = new Vue({
+        el: '#example',
+        data: {
+            message: 'Hello',
+            numbers: [1, 2, 3, 4, 5]
+        },
+        computed:{
+            reversedMessage: function () {
+                return this.message.split('').reverse().join('')
+            },
+
+            evenNumbers: function () {
+                return this.numbers.filter(function (number) {
+                    return number % 2 === 0
+                })
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

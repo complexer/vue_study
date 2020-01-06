@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>note</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="event" @keyup.enter="addList" autofocus="autofocus">
+    <ul>
+        <li v-for="(item, index) in toDoList">{{index+1}}.{{item}}
+            <input type="button" value="x" @click="delList(index)" @mouseenter="" v-show="isShow">
+        </li>
+    </ul>
+    <span>{{toDoList.length}}</span>
+    <input type="button" value="clear" @click="clearList">
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            event: "",
+            isShow: true,
+            toDoList: [],
+        },
+        methods: {
+            addList: function () {
+                this.toDoList.push(this.event);
+                this.event="";
+            },
+            delList: function (index) {
+                this.toDoList.splice(index, 1);
+            },
+            clearList: function () {
+                this.toDoList=[];
+            }
+        }
+    })
+</script>
+</body>
+</html>

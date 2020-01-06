@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0002</title>
+</head>
+<body>
+<div id="app">
+    <h2>current counter:{{counter}}</h2>
+<!--    <button v-on:click="counter++">+</button>-->
+<!--    <button v-on:click="counter&#45;&#45;">-</button>-->
+<!--    <button v-on:click="add_counter">+</button>-->
+<!--    <button v-on:click="sub_counter">-</button>-->
+    <button @click="add_counter">+</button>
+    <button @click="sub_counter">-</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            counter: 0
+        },
+        methods: {
+            add_counter: function () {
+                console.log("add");
+                this.counter++;
+            },
+            sub_counter: function () {
+                console.log("sub");
+                this.counter--;
+            }
+        }
+    })
+</script>
+</body>
+</html>
