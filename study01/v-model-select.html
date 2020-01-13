@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--单选-->
+    <select name="ball" id="ball" v-model="ball">
+        <option value="足球">足球</option>
+        <option value="网球">网球</option>
+        <option value="台球">台球</option>
+        <option value="冰球">冰球</option>
+    </select>
+    <p>当前选择：{{ball}}</p>
+    <p></p>
+<!--多选-->
+    <select name="balls" id="balls" v-model="balls" multiple>
+        <option value="足球">足球</option>
+        <option value="网球">网球</option>
+        <option value="台球">台球</option>
+        <option value="冰球">冰球</option>
+    </select>
+    <p>当前选择：{{balls}}</p>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+
+    const  vm = new Vue({
+        el: "#app",
+        data:{
+            ball: "台球",
+            balls: []
+        }
+    })
+</script>
+</body>
+</html>

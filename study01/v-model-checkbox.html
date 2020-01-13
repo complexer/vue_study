@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model+checkbox+值绑定</title>
+</head>
+<body>
+<div id="app">
+<!--单选-->
+    <label for="agree">
+        <input type="checkbox" v-model="isAgree">同一协议
+    </label>
+    <p>当前选择：{{isAgree}}</p>
+    <button :disabled="!isAgree">下一步</button>
+    <p></p>
+<!--多选-->
+    <label v-for="item in habbiesList" for="item">
+        <input type="checkbox" :value="item" :id="item" v-model="habbies">{{item}}
+    </label>
+    <p>{{habbies}}</p>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            isAgree: false,
+            habbiesList: ['足球','篮球','台球','羽毛球','网球'],
+            habbies: []
+        }
+    })
+
+</script>
+</body>
+</html>

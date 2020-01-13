@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板分离写法</title>
+</head>
+<body>
+<div id="app">
+    <cpn></cpn>
+</div>
+
+
+<template id="cpn">
+    <div>
+        <p>我靠</p>
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+    Vue.component('cpn',{
+        template:"#cpn"
+    })
+
+    const  vm = new Vue({
+        el: "#app",
+    })
+</script>
+</body>
+</html>
