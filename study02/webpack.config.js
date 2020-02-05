@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 module.exports = {
     entry: './src/main.js',
     output:{
@@ -16,5 +17,8 @@ module.exports = {
         alias:{
             'vue$': 'vue/dist/vue.esm.js'
         }
-    }
+    },
+    plugins:[
+        new webpack.BannerPlugin('最终解释权由凌建所有')
+    ]
 }
