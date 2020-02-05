@@ -1,4 +1,8 @@
 const webpack = require('webpack')
+const htmlWebpackPlugin = require('html-webpack-plugin')
+const uglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
+
+
 module.exports = {
     entry: './src/main.js',
     output:{
@@ -19,6 +23,14 @@ module.exports = {
         }
     },
     plugins:[
-        new webpack.BannerPlugin('最终解释权由凌建所有')
-    ]
+        new webpack.BannerPlugin('最终解释权由凌建所有'),
+        new htmlWebpackPlugin({
+            template: 'index.html'
+        }),
+        // new uglifyjsWebpackPlugin()
+    ],
+    devServer: {
+        contentBase: './dist',
+        inline: true
+    }
 }
