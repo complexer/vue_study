@@ -11,6 +11,7 @@
         computed:{
           userId(){
             //获取当前路由的动态参数
+            //$route：代表当前路由对象，$router：代表全局路由对象
             return this.$route.params.userId
           }
         }
