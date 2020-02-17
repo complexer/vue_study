@@ -6,13 +6,16 @@
 </head>
 <body>
 <div id="app">
-    <cpn></cpn>
+    <cpn><button>按钮</button></cpn>
+    <cpn><span>按钮</span></cpn>
 </div>
 
 
 <template id="cpn">
     <div>
         <p>我靠</p>
+<!--       插槽，提高可扩展性  -->
+        <slot></slot>
     </div>
 </template>
 
