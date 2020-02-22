@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise</title>
+</head>
+<body>
+<script>
+    // 一般情况下有异步操作情况下会用到promise
+    // 链式调用
+    new Promise((resolve ,reject) => {
+        setTimeout(() => {
+            //成功时调用resolve，走到then
+            resolve('vue')
+            //失败是调用reject，走到catch
+            reject('vue faild')
+        }, 2000)
+    }).then((data) => {
+        console.log(data);
+    }).catch((err) => {
+        console.log(err);
+    })
+</script>
+</body>
+</html>
