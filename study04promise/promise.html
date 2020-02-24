@@ -13,11 +13,20 @@
             //成功时调用resolve，走到then
             resolve('vue')
             //失败是调用reject，走到catch
-            reject('vue faild')
+            // reject('vue faild')
         }, 2000)
-    }).then((data) => {
+    }).then(data => {
         console.log(data);
-    }).catch((err) => {
+        return new  Promise((resolve ,reject ) => {
+            //第二次网络请求
+            setTimeout(() => {
+                resolve('two')
+            }, 1000)
+        })
+    }).then(data => {
+            //第二次代码
+            console.log(data);
+    }).catch(err => {
         console.log(err);
     })
 </script>

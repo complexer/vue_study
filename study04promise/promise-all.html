@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>all</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //用于需要在两个网络请求（由于不清楚请求成功的先后顺序）成功之后才能执行代码，则可以使用all方法，该方法在两个请求完成之后才会调用then
+    Promise.all([
+        new Promise(resolve => {
+            // console.log("request1");
+            setTimeout(()=>{
+                resolve('request1')
+            }, 1000)
+        }),
+        new Promise(resolve => {
+            // console.log("request2");
+            setTimeout(()=>{
+                resolve('request2')
+            },2000)
+        })
+    ]).then(results =>{
+        console.log(results);
+    })
+</script>
+</html>

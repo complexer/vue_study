@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="application/javascript">
+  function f(data) {
+    function f1() {
+        console.log(data);
+    }
+    return f1;
+  }
+
+  a = f('test');
+  a();
+
+
+
+  function add(x){
+      return function(y){
+          return x + y;
+      };
+  }
+
+  var addFun1 = add(4);
+  var addFun2 = add(9);
+
+  console.log(addFun1(2)); //6
+  console.log(addFun2(2));  //11
+</script>
+</html>
