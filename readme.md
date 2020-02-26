@@ -22,3 +22,8 @@ vue init webpack study05vuex
 ? Setup e2e tests with Nightwatch? No
 ? Should we run `npm install` for you after the project has been created? (recommended) npm
 ```
+
+## vuecli3创建项目
+```shell script
+vue create study07supermall
+```
